@@ -1,5 +1,4 @@
 const { NotImplementedError } = require('../extensions/index.js');
-
 /**
  * Create name of dream team based on the names of its members
  *  
@@ -16,10 +15,15 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 function createDreamTeam(members) {
   let resultName = [];
-  members.forEach(name => { if (typeof (name) == 'string') resultName.push(name[0]) });
+  if (!Array.isArray(members)) return false;
+  members.forEach(name => { if (typeof (name) == 'string') resultName.push(name.toUpperCase().trim()[0]) });
   resultName.sort((a, b) => a.localeCompare(b));
+  console.log(resultName.join(""))
   return resultName.join("");
 }
+
+
+
 
 module.exports = {
   createDreamTeam
