@@ -22,7 +22,6 @@ function countCats(matrix) {
       result++
     }
   }
-  console.log(result)
   return result
 }
 countCats([[0, 1, '^^'], [0, '^^', 2],['^^', 1, 2]])
